@@ -2,7 +2,7 @@ import { Box } from "@mui/system";
 import React, { useEffect, useState } from "react";
 import { useHttp } from "../../hooks/useHttp";
 import { Ipostcard } from "../../utils/interfaces";
-import { NotLoaded } from "../Error/NotLoaded";
+import { Error } from "../Error";
 import { NoResults } from "./NoResults";
 import PostCard from "./PostCard";
 import { PostFilter } from "./PostFilter";
@@ -33,7 +33,7 @@ export const PostContainer: React.FC = () => {
         postsToRender.map((p, i) => <PostCard key={i} post={p} />)}
 
       {postsToRender?.length === 0 && <NoResults />}
-      {err && <NotLoaded />}
+      {err && <Error />}
     </Box>
   );
 };
