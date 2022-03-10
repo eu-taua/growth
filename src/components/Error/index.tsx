@@ -2,7 +2,7 @@ import { Typography } from "@mui/material";
 import { Box } from "@mui/system";
 import offline from "../../../assets/offline.png";
 
-export const NotLoaded: React.FC = () => {
+export const Error: React.FC = () => {
   return (
     <Box display={"flex"} flexDirection="column" alignItems={"center"}>
       <Typography component={"h1"} variant={"h2"}>
