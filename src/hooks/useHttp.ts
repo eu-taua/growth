@@ -9,7 +9,13 @@ export const useHttp = (
   useEffect(() => {
     async function get() {
       try {
-        const data = await fetch(url);
+        const data = await fetch(url, {
+          headers: {
+            Accept: "application/json",
+            "Content-Type": "application/json",
+          },
+          method: "GET",
+        });
         const result = await data.json();
         setData(result);
       } catch (error) {
