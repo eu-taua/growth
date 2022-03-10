@@ -13,7 +13,9 @@ export const PostContainer: React.FC = () => {
   const [filter, setFilter] = useState<string>("");
   const [postsToRender, SetPostsToRender] = useState<Ipostcard[]>();
 
-  const { data: posts, err } = useHttp("http://localhost:4000/posts");
+  const { data: posts, err } = useHttp(
+    "https://api-express-posts-users.herokuapp.com/posts"
+  );
 
   useEffect(() => {
     const filteredPosts = searchPostsToRender(posts, filter);
